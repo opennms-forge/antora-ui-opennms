@@ -16,6 +16,10 @@
   --color-jet-70: #222;
   --color-jet-80: #191919;
   --color-black: #000;
+  --color-chromatic-black: #0ac1b0
+  --color-cool-gray-1: #e9ebf9
+  --color-cool-gray-4: #494C67
+
   /* fonts */
   --rem-base: 14; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
   --body-font-size: 0.875em; /* 14px */
@@ -32,9 +36,9 @@
   --panel-background: var(--color-smoke-30);
   --panel-border-color: var(--color-smoke-90);
   /* navbar */
-  --navbar-background: #131736;
+  --navbar-background: var(--color-chromatic-black);
   --navbar-font-color: var(--color-white);
-  --navbar_hover-background: var(--color-black);
+  --navbar_hover-background: var(--color-chromatic-black);
   --navbar-button-background: var(--color-white);
   --navbar-button-border-color: var(--panel-border-color);
   --navbar-button-font-color: var(--body-font-color);
@@ -111,8 +115,8 @@
   --table-border-color: var(--panel-border-color);
   /* footer */
   --footer-line-height: var(--doc-line-height);
-  --footer-background: var(--color-smoke-90);
-  --footer-font-color: var(--color-gray-70);
+  --footer-background: var(--color-cool-gray-1);
+  --footer-font-color: var(--color-cool-gray-4);
   --footer-link-font-color: var(--color-jet-80);
   /* dimensions and positioning */
   --navbar-height: calc(63 / var(--rem-base) * 1rem);
