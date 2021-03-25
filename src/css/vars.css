@@ -16,10 +16,12 @@
   --color-jet-70: #222;
   --color-jet-80: #191919;
   --color-black: #000;
-  --color-chromatic-black: #0ac1b0;
-  --color-cool-gray-1: #e9ebf9;
+  --color-chromatic-black: #0A0C1B;
+  --color-dark-blue: #131736;
   --color-cool-gray-4: #494c67;
-
+  --color-cool-gray-3: #B4B6C8;
+  --color-cool-gray-2: #B4B6C8;
+  --color-cool-gray-1: #e9ebf9;
   /* fonts */
   --rem-base: 14; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
   --body-font-size: 0.875em; /* 14px */
@@ -27,7 +29,7 @@
   --body-font-size--print: 0.875em; /* 14px */
   --body-line-height: 1.78;
   --body-font-color: var(--color-jet-70);
-  --body-font-family: "Roboto", sans-serif;
+  --body-font-family: "Open Sans", sans-serif;
   --body-font-weight-bold: 600;
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: 600;
