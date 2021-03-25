@@ -31,6 +31,7 @@
   --body-font-color: var(--color-jet-70);
   --body-font-family: "Open Sans", sans-serif;
   --body-font-weight-bold: 600;
+  --heading-font-family: "Inter";
   --monospace-font-family: "Roboto Mono", monospace;
   --monospace-font-weight-bold: 600;
   /* base */
@@ -38,9 +39,9 @@
   --panel-background: var(--color-smoke-30);
   --panel-border-color: var(--color-smoke-90);
   /* navbar */
-  --navbar-background: var(--color-chromatic-black);
+  --navbar-background: var(--color-dark-blue);
   --navbar-font-color: var(--color-white);
-  --navbar_hover-background: var(--color-chromatic-black);
+  --navbar_hover-background: var(--color-dark-blue);
   --navbar-button-background: var(--color-white);
   --navbar-button-border-color: var(--panel-border-color);
   --navbar-button-font-color: var(--body-font-color);
