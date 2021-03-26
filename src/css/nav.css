@@ -271,9 +271,10 @@ html.is-clipped--nav {
 }
 
 .navbar-logo {
-  padding-left: 0.5rem;
+  padding-left: 1.3rem;
   padding-right: 0.5rem;
-  height: 2rem;
+  padding-top: 1rem;
+  height: 3.5rem;
 }
 
 /*
