@@ -270,6 +270,14 @@ html.is-clipped--nav {
   font-weight: var(--body-font-weight-bold);
 }
 
+.navbar-logo {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: 2.0rem;
+}
+
+
+
 /*
 .nav-panel-explore .component .is-latest a::after {
   content: " (latest)";
