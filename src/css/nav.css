@@ -273,10 +273,8 @@ html.is-clipped--nav {
 .navbar-logo {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  height: 2.0rem;
+  height: 2rem;
 }
-
-
 
 /*
 .nav-panel-explore .component .is-latest a::after {
