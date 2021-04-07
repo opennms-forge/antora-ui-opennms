@@ -22,6 +22,8 @@
   --color-cool-gray-3: #b4b6c8;
   --color-cool-gray-2: #b4b6c8;
   --color-cool-gray-1: #e9ebf9;
+  --color-sky-blue: #14d1df;
+
   /* fonts */
   --rem-base: 14; /* used to compute rem value from desired pixel value (e.g., calc(18 / var(--rem-base) * 1rem) = 18px) */
   --body-font-size: 0.875em; /* 14px */
@@ -40,7 +42,7 @@
   --panel-border-color: var(--color-smoke-90);
   /* navbar */
   --navbar-background: var(--color-dark-blue);
-  --navbar-font-color: var(--color-white);
+  --navbar-font-color: var(--color-sky-blue);
   --navbar_hover-background: var(--color-dark-blue);
   --navbar-button-background: var(--color-white);
   --navbar-button-border-color: var(--panel-border-color);
