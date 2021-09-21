@@ -90,7 +90,7 @@ window.antoraLunr = (function (lunr) {
     return hits
   }
 
-  function createSearchResult(result, store, searchResultDataset, query) {
+  function createSearchResult (result, store, searchResultDataset, query) {
     result.forEach(function (item) {
       var url = item.ref
       var hash
@@ -196,7 +196,7 @@ window.antoraLunr = (function (lunr) {
   }
 
   function init (data) {
-    var index = Object.assign({index: lunr.Index.load(data.index), store: data.store})
+    var index = Object.assign({ index: lunr.Index.load(data.index), store: data.store })
     var searchFn = debounce(function () {
       searchIndex(index.index, index.store, searchInput.value)
     }, 100)
@@ -210,37 +210,36 @@ window.antoraLunr = (function (lunr) {
     })
 
     // Extract query from URL and highlite matches
-    let params = new URLSearchParams(window.location.search.slice(1))
-    let query = params.get('q')
+    var params = new URLSearchParams(window.location.search.slice(1))
+    var query = params.get('q')
     if (query !== null) {
       search(index.index, query)
-        .filter(entry => entry.ref.split('#')[0] == window.location.pathname)
-        .forEach(entry => {
-
+        .filter(function (entry) { return entry.ref.split('#')[0] === window.location.pathname })
+        .forEach(function (entry) {
           Object.keys(entry.matchData.metadata).forEach(function (term) {
             Object.keys(entry.matchData.metadata[term]).forEach(function (field) {
-              let positions = entry.matchData.metadata[term][field].position
-                .sort((a, b) => a[0] - b[0])
+              var positions = entry.matchData.metadata[term][field].position
+                .sort(function (a, b) { return a[0] - b[0] })
                 .slice()
 
-              let element = document.querySelector('article.doc')
+              var element = document.querySelector('article.doc')
 
-              if (field == 'title') {
-                let ref = entry.ref.split('#')
+              if (field === 'title') {
+                var ref = entry.ref.split('#')
 
-                let node = (ref[1] === undefined)
+                var node = (ref[1] === undefined)
                   ? element.querySelector('h1') // Find the main title
                   : document.getElementById(ref[1]) // Find the sub-title
 
                 if (node !== undefined) {
-                  positions.forEach(match => {
+                  positions.forEach(function (match) {
                     // Define range of match in relation to current node
-                    let range = document.createRange()
+                    var range = document.createRange()
                     range.setStart(node.lastChild, match[0])
                     range.setEnd(node.lastChild, match[0] + match[1])
 
                     // Create marking element
-                    let tag = document.createElement('mark')
+                    var tag = document.createElement('mark')
                     tag.dataset.matchStart = match[0]
                     tag.dataset.matchLen = match[1]
 
@@ -248,13 +247,12 @@ window.antoraLunr = (function (lunr) {
                     range.surroundContents(tag)
                   })
                 }
-
-              } else if (field == 'text') {
+              } else if (field === 'text') {
                 // Walk the article but remove titles, navigation and toc
-                walker = document.createTreeWalker(
+                var walker = document.createTreeWalker(
                   element,
                   NodeFilter.SHOW_TEXT,
-                  node => {
+                  function (node) {
                     if (node.parentElement.matches('article.doc aside.toc')) return NodeFilter.FILTER_SKIP
                     if (node.parentElement.matches('article.doc aside.toc *')) return NodeFilter.FILTER_SKIP
                     if (node.parentElement.matches('article.doc nav.pagination')) return NodeFilter.FILTER_SKIP
@@ -272,7 +270,7 @@ window.antoraLunr = (function (lunr) {
                     if (node.parentElement.matches('article.doc h6')) return NodeFilter.FILTER_SKIP
                     if (node.parentElement.matches('article.doc h6 *')) return NodeFilter.FILTER_SKIP
                     return NodeFilter.FILTER_ACCEPT
-                  },
+                  }
                 )
 
                 var index = -1 // Ignore first encountered blank
@@ -280,12 +278,12 @@ window.antoraLunr = (function (lunr) {
 
                 var match = positions.shift()
 
-                while (node = walker.nextNode()) {
+                while ((node = walker.nextNode()) !== null) {
                   if (match === undefined) break
 
                   var text = node.textContent
 
-                  if (text == '') {
+                  if (text === '') {
                     continue
                   }
 
@@ -305,14 +303,13 @@ window.antoraLunr = (function (lunr) {
 
                   // Check if match is part of this node
                   if (match[0] < index + text.length) {
-
                     // Define range of match in relation to current node
-                    let range = document.createRange()
+                    var range = document.createRange()
                     range.setStart(node, match[0] - index)
                     range.setEnd(node, match[0] + match[1] - index)
 
                     // Create marking element
-                    let tag = document.createElement('mark')
+                    var tag = document.createElement('mark')
                     tag.dataset.matchStart = match[0]
                     tag.dataset.matchLen = match[1]
 
